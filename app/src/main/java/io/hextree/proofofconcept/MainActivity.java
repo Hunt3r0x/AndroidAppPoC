@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 counter = counter + 1;
-                textView.setText(String.format("Hello %s! You Clicked: %d time", Name, counter));
-                if (counter == 3) {
+                textView.setText(String.format("%s! You Clicked: %d time", Name, counter));
+                if (counter == 30000) {
                     Log.v("AnasLog", "You Clicked 3 Times.");
                     Intent echoIntent = new Intent(MainActivity.this, EchoActivity.class);
                     echoIntent.putExtra(Intent.EXTRA_TEXT, "Congratulations! " + Name + " You clicked 3 times.");
