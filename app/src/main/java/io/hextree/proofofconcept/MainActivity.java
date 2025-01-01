@@ -1,13 +1,12 @@
 package io.hextree.proofofconcept;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
-import android.widget.TextView;
 import android.os.Bundle;
-import android.widget.Button;
+import android.util.Log;
 import android.view.View;
-
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("DefaultLocale")
             @Override
             public void onClick(View v) {
-            counter = counter + 1;
-            textView.setText(String.format("Hello %s! You Clicked: %d time", Name, counter));
+                counter = counter + 1;
+                textView.setText(String.format("Hello %s! You Clicked: %d time", Name, counter));
                 if (counter == 3) {
                     Log.v("AnasLog", "You Clicked 3 Times.");
                     Intent echoIntent = new Intent(MainActivity.this, EchoActivity.class);
@@ -41,6 +40,16 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(echoIntent);
                     counter = 0;
                 }
+            }
+        });
+
+        // Button to navigate to CurlActivity
+        Button btnCurl = findViewById(R.id.btnCurl);
+        btnCurl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent curlIntent = new Intent(MainActivity.this, CurlActivity.class);
+                startActivity(curlIntent);
             }
         });
     }

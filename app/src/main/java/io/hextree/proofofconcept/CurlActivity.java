@@ -1,5 +1,6 @@
 package io.hextree.proofofconcept;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class CurlActivity extends AppCompatActivity {
         sendRequest();
     }
 
+    @SuppressLint("SetTextI18n")
     private void sendRequest() {
         OkHttpClient client = new OkHttpClient();
 
