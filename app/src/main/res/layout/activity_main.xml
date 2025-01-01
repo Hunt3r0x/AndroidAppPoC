@@ -17,20 +17,28 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/textview"
             tools:layout_editor_absoluteX="179dp"
             tools:layout_editor_absoluteY="206dp" />
 
         <Button
             android:id="@+id/FirsButt1"
-            android:layout_width="match_parent"
+            android:layout_width="161dp"
             android:layout_height="wrap_content"
-            android:text="Add 1" />
+            android:text="@string/add_1" />
+
         <Button
             android:id="@+id/btnCurl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go to Curl Activity"
+            android:text="@string/curl"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/btnEcho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/echo"
             android:layout_marginTop="16dp"
             android:layout_gravity="center" />
     </LinearLayout>

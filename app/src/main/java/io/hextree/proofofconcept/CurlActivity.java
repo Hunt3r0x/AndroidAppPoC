@@ -1,5 +1,6 @@
 package io.hextree.proofofconcept;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,10 +19,10 @@ import okhttp3.Response;
 public class CurlActivity extends AppCompatActivity {
 
     private EditText urlEditText;
-    private Button sendRequestButton;
     private TextView responseTextView;
     private OkHttpClient client;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class CurlActivity extends AppCompatActivity {
 
         // Initialize UI components
         urlEditText = findViewById(R.id.urlEditText);
-        sendRequestButton = findViewById(R.id.sendRequestButton);
+        Button sendRequestButton = findViewById(R.id.sendRequestButton);
         responseTextView = findViewById(R.id.responseTextView);
 
         // Create a single, reusable OkHttpClient
@@ -62,6 +63,7 @@ public class CurlActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void sendRequest(String url) {
         // Build the request with the provided URL
         Request request = new Request.Builder()

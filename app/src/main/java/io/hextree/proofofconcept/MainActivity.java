@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 counter = counter + 1;
                 textView.setText(String.format("%s! You Clicked: %d time", Name, counter));
-                if (counter == 30000) {
-                    Log.v("AnasLog", "You Clicked 3 Times.");
+                if (counter == 3) {
+                    Log.v("AnasLog", "Congrats You Solved It (:");
                     Intent echoIntent = new Intent(MainActivity.this, EchoActivity.class);
-                    echoIntent.putExtra(Intent.EXTRA_TEXT, "Congratulations! " + Name + " You clicked 3 times.");
+                    echoIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.ssagzz) + " " + getString(R.string.ssag) + getString(R.string.ssagg) + getString(R.string.ssaggg) + getString(R.string.ssagGgg) + getString(R.string.ssagGggg) + getString(R.string.ssagggggg));
                     startActivity(echoIntent);
                     counter = 0;
                 }
@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent curlIntent = new Intent(MainActivity.this, CurlActivity.class);
+                startActivity(curlIntent);
+            }
+        });
+
+        // Button to navigate to CurlActivity
+        Button btnEcho = findViewById(R.id.btnEcho);
+        btnEcho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent curlIntent = new Intent(MainActivity.this, EchoActivity.class);
                 startActivity(curlIntent);
             }
         });

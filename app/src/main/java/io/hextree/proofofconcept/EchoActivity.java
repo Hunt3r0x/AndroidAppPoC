@@ -23,11 +23,11 @@ public class EchoActivity extends AppCompatActivity {
         if (receivedText != null && !receivedText.isEmpty()) {
             TextView textView = findViewById(R.id.textView2);
             // Safely display the entire string including spaces
-            textView.setText("You Shared: " + receivedText.trim());
+            textView.setText(receivedText.trim());
         } else {
             // Handle case where no text was received
             TextView textView = findViewById(R.id.textView2);
-            textView.setText("No text was shared!");
+            textView.setText("You Must Click 30000 Clicks To Solve It (:");
         }
     }
 }

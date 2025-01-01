@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AnasDroid</string>
+    <string name="textview">TextView</string>
+    <string name="add_1">Add 1</string>
+    <string name="curl">Curl</string>
+    <string name="echo">Echo</string>
+    <string name="ssag">F</string>
+    <string name="ssagg">l</string>
+    <string name="ssaggg">ag</string>
+    <string name="ssagzz">Congratulations!</string>
+    <string name="ssagGgg">{Aa_Aw_Aa_</string>
+    <string name="ssagGggg">Aw_Aa_Aw</string>
+    <string name="ssagggggg">_Aa_Aw}</string>
 </resources>
