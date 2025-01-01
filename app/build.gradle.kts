@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.okhttp.v4120)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
