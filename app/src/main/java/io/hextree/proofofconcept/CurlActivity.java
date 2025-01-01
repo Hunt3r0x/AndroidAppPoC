@@ -2,6 +2,10 @@ package io.hextree.proofofconcept;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,23 +19,32 @@ import java.io.IOException;
 public class CurlActivity extends AppCompatActivity {
 
     private TextView responseTextView;
+    private OkHttpClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curl);
 
-        responseTextView = findViewById(R.id.responseTextView); // Ensure your layout has a TextView with this ID
+        responseTextView = findViewById(R.id.responseTextView);
+        client = new OkHttpClient();
 
-        sendRequest();
+        // Check if the Intent has a "url" extra
+        if (getIntent() != null && getIntent().hasExtra("url")) {
+            String urlFromIntent = getIntent().getStringExtra("url");
+            if (urlFromIntent != null && !urlFromIntent.isEmpty()) {
+                sendRequest(urlFromIntent);
+            } else {
+                responseTextView.setText("URL from intent is empty.");
+            }
+        } else {
+            responseTextView.setText("No URL found in Intent extras.");
+        }
     }
 
-    @SuppressLint("SetTextI18n")
-    private void sendRequest() {
-        OkHttpClient client = new OkHttpClient();
-
+    private void sendRequest(String url) {
         Request request = new Request.Builder()
-                .url("https://pkgtopoca.free.beeceptor.com") // Replace with your URL
+                .url(url)
                 .build();
 
         new Thread(() -> {
@@ -41,11 +54,14 @@ public class CurlActivity extends AppCompatActivity {
                     String responseBody = response.body().string();
                     runOnUiThread(() -> responseTextView.setText(responseBody));
                 } else {
-                    runOnUiThread(() -> responseTextView.setText("Error: " + response.code()));
+                    runOnUiThread(() ->
+                            responseTextView.setText("Error: " + response.code()));
                 }
             } catch (IOException e) {
-                runOnUiThread(() -> responseTextView.setText("Request failed: " + e.getMessage()));
+                runOnUiThread(() ->
+                        responseTextView.setText("Request failed: " + e.getMessage()));
             }
         }).start();
     }
 }
+

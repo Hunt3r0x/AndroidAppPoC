@@ -17,5 +17,17 @@
             android:layout_height="wrap_content"
             android:text="Response will appear here"
             android:textSize="16sp" />
+        <EditText
+            android:id="@+id/urlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter URL" />
+
+        <!-- Button to send request -->
+        <Button
+            android:id="@+id/sendRequestButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Request" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
