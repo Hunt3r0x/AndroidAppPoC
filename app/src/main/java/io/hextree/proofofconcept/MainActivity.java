@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 counter = counter + 1;
                 textView.setText(String.format("%s! You Clicked: %d time", Name, counter));
-                if (counter == 3) {
+                if (counter == 30000) {
                     Log.v("AnasLog", "Congrats You Solved It (:");
                     Intent echoIntent = new Intent(MainActivity.this, EchoActivity.class);
                     echoIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.ssagzz) + " " + getString(R.string.ssag) + getString(R.string.ssagg) + getString(R.string.ssaggg) + getString(R.string.ssagGgg) + getString(R.string.ssagGggg) + getString(R.string.ssagggggg));
