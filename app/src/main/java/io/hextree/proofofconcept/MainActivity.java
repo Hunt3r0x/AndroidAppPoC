@@ -53,12 +53,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Button to navigate to CurlActivity
+        // Button to navigate to EchoActivity
         Button btnEcho = findViewById(R.id.btnEcho);
         btnEcho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent curlIntent = new Intent(MainActivity.this, EchoActivity.class);
+                startActivity(curlIntent);
+            }
+        });
+
+        // Button to navigate to HTTP2Activity
+        Button btnHTTP2 = findViewById(R.id.btnHTTP2);
+        btnHTTP2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent curlIntent = new Intent(MainActivity.this, HTTP2.class);
                 startActivity(curlIntent);
             }
         });
