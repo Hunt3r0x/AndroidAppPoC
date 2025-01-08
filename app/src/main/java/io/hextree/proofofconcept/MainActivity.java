@@ -72,5 +72,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(curlIntent);
             }
         });
+
+        // Button to navigate to JNIActivity
+        Button JNIButton1 = findViewById(R.id.JNIButton1);
+        JNIButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent curlIntent = new Intent(MainActivity.this, JNIActivity.class);
+                startActivity(curlIntent);
+            }
+        });
     }
 }
