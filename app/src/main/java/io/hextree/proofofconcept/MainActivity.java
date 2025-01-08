@@ -3,83 +3,51 @@ package io.hextree.proofofconcept;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    int counter = 0;
-    String Name = "Cobry Manga";
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
         TextView textView = findViewById(R.id.textView);
-        textView.setText("Wanna Play?");
-
-        Button FirsButt1 = findViewById(R.id.FirsButt1);
-        FirsButt1.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("DefaultLocale")
-            @Override
-            public void onClick(View v) {
-                counter = counter + 1;
-                textView.setText(String.format("%s! You Clicked: %d time", Name, counter));
-                if (counter == 30000) {
-                    Log.v("AnasLog", "Congrats You Solved It (:");
-                    Intent echoIntent = new Intent(MainActivity.this, EchoActivity.class);
-                    echoIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.ssagzz) + " " + getString(R.string.ssag) + getString(R.string.ssagg) + getString(R.string.ssaggg) + getString(R.string.ssagGgg) + getString(R.string.ssagGggg) + getString(R.string.ssagggggg));
-                    startActivity(echoIntent);
-                    counter = 0;
-                }
-            }
-        });
+        textView.setText("Hello, World");
 
         // Button to navigate to CurlActivity
         Button btnCurl = findViewById(R.id.btnCurl);
         btnCurl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent curlIntent = new Intent(MainActivity.this, CurlActivity.class);
-                startActivity(curlIntent);
+                textView.setText(String.format("Progress must be 69"));
             }
         });
 
-        // Button to navigate to EchoActivity
-        Button btnEcho = findViewById(R.id.btnEcho);
-        btnEcho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent curlIntent = new Intent(MainActivity.this, EchoActivity.class);
-                startActivity(curlIntent);
-            }
-        });
+        SeekBar seekBar = findViewById(R.id.seekBar);
+        TextView seekBarValue = findViewById(R.id.seekBarValue);
 
-        // Button to navigate to HTTP2Activity
-        Button btnHTTP2 = findViewById(R.id.btnHTTP2);
-        btnHTTP2.setOnClickListener(new View.OnClickListener() {
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onClick(View v) {
-                Intent curlIntent = new Intent(MainActivity.this, HTTP2.class);
-                startActivity(curlIntent);
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                seekBarValue.setText("Progress: " + progress);
+                if (progress == 69) {
+                    Intent curlIntent = new Intent(MainActivity.this, ClicksActivity.class);
+                    startActivity(curlIntent);
+                }
             }
-        });
 
-        // Button to navigate to JNIActivity
-        Button JNIButton1 = findViewById(R.id.JNIButton1);
-        JNIButton1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent curlIntent = new Intent(MainActivity.this, JNIActivity.class);
-                startActivity(curlIntent);
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
     }

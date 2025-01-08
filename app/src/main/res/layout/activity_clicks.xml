@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".ClicksActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -19,25 +19,40 @@
             android:text="@string/textview"
             tools:layout_editor_absoluteX="179dp"
             tools:layout_editor_absoluteY="206dp" />
+
+        <Button
+            android:id="@+id/FirsButt1"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:text="@string/add_1" />
+
         <Button
             android:id="@+id/btnCurl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/clickme1"
+            android:text="@string/curl"
             android:layout_marginTop="16dp"
             android:layout_gravity="center" />
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="50"/>
-
-        <TextView
-            android:id="@+id/seekBarValue"
+        <Button
+            android:id="@+id/btnEcho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Progress: 50"
-            android:layout_marginTop="16dp"/>
+            android:text="@string/echo"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/btnHTTP2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/http2"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/JNIButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/runnji"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
