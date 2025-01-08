@@ -1,21 +1,16 @@
 package io.hextree.proofofconcept;
-
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import io.hextree.weatherusa.InternetUtil;
 
 public class JNIActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +18,6 @@ public class JNIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_jniactivity);
 
         TextView textView = findViewById(R.id.textView);
-        textView.setText("Wanna Play?");
+        textView.setText("FLAG: " + InternetUtil.solve());
     }
 }
