@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "io.hextree.proofofconcept"
+    namespace = "io.cobrydroid.proofofconcept"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "io.hextree.proofofconcept"
+        applicationId = "io.cobrydroid.proofofconcept"
         minSdk = 29
         targetSdk = 34
         versionCode = 1

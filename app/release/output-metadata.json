@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "io.hextree.proofofconcept",
+  "applicationId": "io.cobrydroid.proofofconcept",
   "variantName": "release",
   "elements": [
     {

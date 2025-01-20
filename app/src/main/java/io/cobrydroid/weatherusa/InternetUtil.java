@@ -1,4 +1,4 @@
-package io.hextree.weatherusa;
+package io.cobrydroid.weatherusa;
 
 public class InternetUtil {
 

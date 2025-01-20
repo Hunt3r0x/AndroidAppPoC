@@ -1,4 +1,4 @@
-package io.hextree.proofofconcept;
+package io.cobrydroid.proofofconcept;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("io.hextree.proofofconcept", appContext.getPackageName());
+        assertEquals("io.cobrydroid.proofofconcept", appContext.getPackageName());
     }
 }

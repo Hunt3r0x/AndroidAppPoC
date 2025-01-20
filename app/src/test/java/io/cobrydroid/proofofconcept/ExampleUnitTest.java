@@ -1,4 +1,4 @@
-package io.hextree.proofofconcept;
+package io.cobrydroid.proofofconcept;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package io.hextree.proofofconcept;
+package io.cobrydroid.proofofconcept;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.hextree.weatherusa.InternetUtil;
+import io.cobrydroid.weatherusa.InternetUtil;
 
 public class JNIActivity extends AppCompatActivity {
 
