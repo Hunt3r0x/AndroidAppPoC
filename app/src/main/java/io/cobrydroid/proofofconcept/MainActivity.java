@@ -19,19 +19,26 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textView);
         textView.setText("Hello, World");
-
+        SeekBar seekBar = findViewById(R.id.seekBar);
         // Button to navigate to CurlActivity
         Button btnCurl = findViewById(R.id.btnCurl);
         btnCurl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText(String.format("Progress must be 69"));
+                int currentProgress = seekBar.getProgress();
+                int newProgress = currentProgress + 1;
+
+                // Ensure we don't go over the max
+                if (newProgress <= seekBar.getMax()) {
+                    seekBar.setProgress(newProgress);
+                    textView.setText("Progress incremented to: " + newProgress);
+                } else {
+                    textView.setText("Max progress reached: " + currentProgress);
+                }
             }
         });
 
-        SeekBar seekBar = findViewById(R.id.seekBar);
         TextView seekBarValue = findViewById(R.id.seekBarValue);
-
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

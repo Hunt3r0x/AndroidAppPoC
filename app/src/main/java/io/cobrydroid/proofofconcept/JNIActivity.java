@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.cobrydroid.weatherusa.InternetUtil;
+import io.cobrydroid.weatherusa.InternetUtil2;
 
 public class JNIActivity extends AppCompatActivity {
 
@@ -18,6 +18,6 @@ public class JNIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_jniactivity);
 
         TextView textView = findViewById(R.id.textView);
-        textView.setText("FLAG: " + InternetUtil.solve());
+        textView.setText("FLAG: " + InternetUtil2.solve());
     }
 }
